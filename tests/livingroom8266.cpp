@@ -19,10 +19,10 @@ void setup() {
   ap.set_password("password1");
   wifi->add_sta(ap);
 
-  auto *ota = new ota::OTAComponent(8266);
+  auto *ota = new ota::OTAComponent();
   ota->start_safe_mode();
 
-  auto *gpio = new gpio::GPIOSwitch("GPIO Switch", new GPIOPin(8, OUTPUT));
+  auto *gpio = new gpio::GPIOSwitch();
   App.register_component(gpio);
   App.register_switch(gpio);
 
